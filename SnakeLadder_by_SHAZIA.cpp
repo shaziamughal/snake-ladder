@@ -540,7 +540,7 @@ int main()
     cin>>y;
     gotoRowCol(0,0);
     cout<<"                                                                                      ";
-    int sr=0,sc=0,x=4,w=5,turn=0,D;
+    int sr=0,sc=0,x=4,w=5,turn=0,D; //declaring variables for boxe
     int x1= 37, y1= 48;
     int x2=37, y2=49;
     int t=0, t1=0;
@@ -549,19 +549,19 @@ int main()
     char c =char(219);
     char ps1='%';
     char ps2='@';
-    Boxes(sr,sc,w,x,c);
-    positions();
-    if(y=='p')
+    Boxes(sr,sc,w,x,c); //this will print boxes on screen console-based
+    positions();	//showing snake and ladder positions
+    if(y=='p') 		//checking if you wanna resume game by pressing "p" // File handling
     {
         reader(sr, sc,x,w,turn, D, x1,y1, x2,y2, t, t1, P1, P2, pp1, pp2, c,ps1,ps2);
     }
-    do
+    do			//or  pressing any key will lead you play new game 
     {
         erase_S(x1, y1, x2, y2, turn , pp1, pp2);
         update_position(t,t1,D,x1,y1,x2,y2,turn,P1,P2,pp1,pp2,sr,sc,x,w,c,ps1,ps2);
         change_turn(turn);
     }
-    while(P1!=100 && P2!=100);
+    while(P1!=100 && P2!=100);		//condition to terminate game if true
     if(P1==100)
     {
         gotoRowCol(40,65);
